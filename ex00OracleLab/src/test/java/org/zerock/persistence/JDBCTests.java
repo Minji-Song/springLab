@@ -23,14 +23,12 @@ public class JDBCTests {
 	@Test
 	public void testConnection() {
 
-		try (Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott",
-				"tiger")) {
+		try (Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "book_ex",
+				"book_ex")) {
 
-			//log.info(con);
-			System.out.println(con);
+			log.info("*** con="+con);
 		} catch (Exception e) {
-			//fail(e.getMessage());
-			e.printStackTrace();
+			fail(e.getMessage());
 		}
 	}
 

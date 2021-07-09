@@ -1,27 +1,24 @@
-ALTER TABLE tb_board DROP CONSTRAINT pk_board;
-DROP TABLE tb_board;
+create user book_ex identified by book_ex;
+grant connect, resource to book_ex;
 
-CREATE TABLE tb_board (
-    num          NUMBER(10) NOT NULL,
-    name         VARCHAR2(20) NOT NULL,
-    title        VARCHAR2(100) NOT NULL,
-    content      CLOB NULL,
-    read_count   NUMBER(10) DEFAULT 0 NOT NULL,
-    write_date   DATE NOT NULL
+
+--alter table board drop constraint board_num_pk;
+--drop table board;
+
+create table board (
+    num        	number(10) not null,
+    name        varchar2(20) not null,
+    title       varchar2(100) not null,
+    content     clob null,
+    readcount   number(10) default 0 not null,
+    writedate   date not null
 );
 
-ALTER TABLE tb_board ADD CONSTRAINT pk_board PRIMARY KEY ( num );
+alter table board add constraint board_num_pk primary key ( num );
 
-INSERT INTO tb_board VALUES (
-    2,
-    '유재석',
-    '게시물 작성',
-    '글 내용',
-    0,
-    SYSDATE
-);
+insert into board values (1,'유재석','제목 테스트1','내용 테스트1',0,sysdate);
+insert into board values (2,'이광수','제목 테스트2','내용 테스트2',1,sysdate);
 
-COMMIT;
+commit;
 
-SELECT * FROM tb_board;
-    
+select * from board;
