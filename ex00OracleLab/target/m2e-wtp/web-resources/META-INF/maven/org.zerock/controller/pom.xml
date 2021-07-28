@@ -14,9 +14,7 @@
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
-
-
-
+	
 	<!-- lab1 begin -->
 	<repositories>
 		<repository>
@@ -25,8 +23,6 @@
 		</repository>
 	</repositories>
 	<!-- lab1 end -->
-
-
 
 	<dependencies>
 		<!-- Spring -->
@@ -132,8 +128,6 @@
 			<scope>test</scope>
 		</dependency>
 
-
-
 		<!-- lab begin -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -218,9 +212,6 @@
 			<version>2.7.4</version>
 		</dependency>
 		<!-- lab end -->
-
-
-
 
 	</dependencies>
 	<build>
